@@ -6,7 +6,16 @@ var words = [
     "Document",
     "Object",
     "Class",
-    "MongoDB"
+    "MongoDB",
+    "NoSQL",
+    "Dragon",
+    "Axios",
+    "Development",
+    "Web",
+    "Encapsulation",
+    "Polymorphism",
+    "Inheritance",
+    "Abstarction"
 ];
 
 wordHandler = document.getElementById('word');
