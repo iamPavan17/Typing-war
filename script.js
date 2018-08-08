@@ -23,9 +23,14 @@ textboxHandler = document.getElementById('textbox');
 statusHandler = document.getElementById('status');
 timeHandler = document.getElementById('time');
 scoreHandler = document.getElementById('score');
+restartHandler = document.getElementById('restart');
 let count = 0;
-let time = 4;
+let time = 6;
 textboxHandler.addEventListener('input', check);
+
+window.addEventListener('load', function(){
+    restartHandler.style.display = "none";
+})
 
 var set = setInterval(function(){
     time--;
@@ -35,12 +40,7 @@ var set = setInterval(function(){
         statusHandler.innerHTML = "Game Over!!!";
         clearInterval(set);
         textboxHandler.setAttribute('readonly', true);
-
-        // resetHandler = document.getElementById('reset');
-        // var createButton = document.createElement('BUTTON');
-        // var t = document.createTextNode("Click me");
-        // createButton.appendChild(t);
-        // resetHandler.appendChild(createButton);
+        restartHandler.style.display = "";
     }
 },1000);
 
@@ -52,6 +52,10 @@ function check(){
         textboxHandler.value = "";   
         count++;
         scoreHandler.innerHTML = count; 
-        time = 4;        
+        time = 6;        
     }
 }
+
+restartHandler.addEventListener('click', function(){
+    location.reload();
+})
