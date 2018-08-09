@@ -38,6 +38,7 @@ var set = setInterval(function(){
     if(time === 0)
     {
         statusHandler.innerHTML = "Game Over!!!";
+        responsiveVoice.speak("Game Over, ,  Press the restart button to retry");
         clearInterval(set);
         textboxHandler.setAttribute('readonly', true);
         restartHandler.style.display = "";
